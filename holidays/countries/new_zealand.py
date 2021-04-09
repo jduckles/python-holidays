@@ -110,6 +110,17 @@ class NewZealand(HolidayBase):
             # http://paperspast.natlib.govt.nz/cgi-bin/paperspast?a=d&d=NZH19091110.2.67
             self[date(year, NOV, 9)] = name  # Edward VII
 
+        # Mātariki Day - Māori New Year
+        name = "Matariki Day"
+        dates_obs = {
+            2022: [(JUN, 24)]
+            # By early 2022 the forward 30-years of dates will be published by the NZ govt. 
+        }
+        if year in dates_obs:
+            for date_obs in dates_obs[year]:
+                hol_date = date(year, *date_obs)
+                self[hol_date] = name
+
         # Labour Day
         name = "Labour Day"
         if year >= 1910:
